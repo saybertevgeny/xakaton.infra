@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  dbpostgres:
+    image: postgres:12.12
+    container_name: dbpostgres
+    environment:
+      - POSTGRES_USER=fdasn1h
+      - POSTGRES_PASSWORD=X13NFl5m8VgpapY18UZN
+      - POSTGRES_DB=xakaton
+    volumes:
+      - ./db/db_data:/var/lib/postgresql
+    ports:
+      - 5454:5432
+  classificator_by_category:
+    image: classificator
+    container_name: classificator_by_category
+    volumes:
+      - ./nlp_model/model_classification.txt:/opt/project/xakaton/data/model.txt
+    ports:
+      - 9994:9994
+  classificator_by_priority:
+    image: classificator
+    container_name: classificator_by_priority
+    volumes:
+      - ./nlp_model/model_priority.txt:/opt/project/xakaton/data/model.txt
+    ports:
+      - 9995:9994
