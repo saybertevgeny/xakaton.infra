@@ -1,10 +1,10 @@
 server {
 	listen 80 ;
 	listen [::]:80;
-	server_name xakaton.saybert.ru;
+	server_name xakaton.webtm.ru;
 
 
-	root /var/www/xakaton.saybert.ru/html;
+	root /var/www/xakaton.webtm.ru/;
 
 	location ~ /classificator/category/(.*)$ {
 		proxy_pass http://127.0.0.1:9994/$1$is_args$args;
@@ -35,4 +35,3 @@ server {
 	}
 
 }
-
