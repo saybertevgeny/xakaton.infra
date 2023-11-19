@@ -5,9 +5,9 @@ services:
     image: postgres:12.12
     container_name: dbpostgres
     environment:
-      - POSTGRES_USER=ldav12ea
-      - POSTGRES_PASSWORD=21321dsad12gfq12rfvaADA
-      - POSTGRES_DB=xakaton
+      - POSTGRES_USER=
+      - POSTGRES_PASSWORD=
+      - POSTGRES_DB=
     volumes:
       - db:/var/lib/postgresql/data
     ports:
