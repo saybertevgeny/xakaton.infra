@@ -5,11 +5,11 @@ services:
     image: postgres:12.12
     container_name: dbpostgres
     environment:
-      - POSTGRES_USER=fdasn1h
-      - POSTGRES_PASSWORD=X13NFl5m8VgpapY18UZN
+      - POSTGRES_USER=ldav12ea
+      - POSTGRES_PASSWORD=21321dsad12gfq12rfvaADA
       - POSTGRES_DB=xakaton
     volumes:
-      - ./db/db_data:/var/lib/postgresql
+      - db:/var/lib/postgresql/data
     ports:
       - 5454:5432
   classificator_by_category:
@@ -26,3 +26,15 @@ services:
       - ./nlp_model/model_priority.txt:/opt/project/xakaton/data/model.txt
     ports:
       - 9995:9994
+  javaui:
+    image: javaui
+    container_name: javaui
+    environment:
+      db_username:
+      db_password:
+      db_url:
+    ports:
+      - 8083:8083
+volumes:
+    db:
+
